@@ -1,0 +1,18 @@
+<h1> Deploys </h1>
+
+
+<div class="overflow-auto">
+  {{#each model as |revision|}}
+    <div class="clearfix border mt2 {{if model.active "is-active"}}">
+      <div class="sm-col p2">
+        {{#if revision.active}}
+          <span class="mega-octicon octicon-squirrel"></span>
+        {{else}}
+          <span class="mega-octicon octicon-rocket"></span>
+        {{/if}}
+      </div>
+      <div class="overflow-hidden p2">{{revision.commit}}</div>
+      <div class="sm-col p2">{{revision.commitMessage}}</div>
+    </div>
+  {{/each}}
+</div>
